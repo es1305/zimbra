@@ -13,7 +13,7 @@ apt install socat
 получение и установка acme.sh:
 
 ```bash
-curl https://get.acme.sh | sh -s email=es1305@gmail.com
+curl https://get.acme.sh | sh -s email=postmaster@domain.tld
 ```
 Назначим CA по умолчанию:
 
