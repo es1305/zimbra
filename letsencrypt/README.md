@@ -5,12 +5,21 @@
 
 ## Установка acme.sh 
 
+acme.sh использует socat:
+
 ```bash
 apt install socat
+```
+получение и установка acme.sh:
 
+```bash
 curl https://get.acme.sh | sh -s email=es1305@gmail.com
 ```
+Назначим CA по умолчанию:
+
+```bash
 ~/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+```
 
 ## Выпуск и установка сертификата
 Для взаимодействи с API Cloudflare необходимы [Api Token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/) или [Global API key](https://developers.cloudflare.com/fundamentals/api/get-started/keys/). Их нужно добавить в переменные окружения:
