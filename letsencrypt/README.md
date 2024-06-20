@@ -22,7 +22,7 @@ curl https://get.acme.sh | sh -s email=postmaster@domain.tld
 ```
 
 ## Выпуск и установка сертификата
-Для взаимодействи с API Cloudflare необходимы [Api Token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/) или [Global API key](https://developers.cloudflare.com/fundamentals/api/get-started/keys/). Их нужно добавить в переменные окружения:
+Для взаимодействия с API Cloudflare необходимы [Api Token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/) или [Global API key](https://developers.cloudflare.com/fundamentals/api/get-started/keys/). Их нужно добавить в переменные окружения:
 
 ```bash
 export CF_Key="04c5##############################"
