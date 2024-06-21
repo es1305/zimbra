@@ -38,7 +38,7 @@ export CF_Email="admin@domain.tld"
 ~/.acme.sh/acme.sh --issue --dns dns_cf -d domain.tld -d *.domain.tld
 ```
 
-### Установка:
+### Установка сертификата:
 
 ```bash
 mkdir -p /opt/zimbra/ssl/letsencrypt \
@@ -52,4 +52,34 @@ mkdir -p /opt/zimbra/ssl/letsencrypt \
 (проверьте путь до скрипта в последней строке)
 
 Дальнейшее получение и установка сертификата происходят автоматически по расписанию в cron.
+
+## Усиление безопасности Zimbra
+
+## Настройка заголовков HTTP
+
+HSTS и запрет индексирования поисковыми ботами:
+
+```bash
+zmprov mcf +zimbraResponseHeader "Strict-Transport-Security: max-age=31536000; includeSubDomains"
+zmprov mcf +zimbraResponseHeader "X-Content-Type-Options: nosniff"
+zmprov mcf +zimbraResponseHeader "X-Robots-Tag: noindex"
+zmprov mcf +zimbraResponseHeader "Referrer-Policy: no-referrer"
+zmprov mcf zimbraMailKeepOutWebCrawlers TRUE
+zmmailboxdctl restart
+```
+Anti-CSRF tokens:
+
+```bash
+zmlocalconfig -e zimbra_same_site_cookie="Strict"
+zmprov mcf +zimbraCsrfAllowedRefererHosts "mx.mydomain.tld"
+```
+
+Content-Security-Policy (CSP):
+
+```bash
+zmprov mcf +zimbraResponseHeader "Content-Security-Policy: default-src https: 'self' 'unsafe-inline'; script-src https: 'self' 'unsafe-inline' 'unsafe-eval'; object-src 'none'; img-src 'self' data:"
+```
+Имейте ввиду, директивы типа `unsafe-inline` снижают оценку на [Mozilla Observatory](https://observatory.mozilla.org), т.к. разрешают выполнение inline-скриптов. Кодировать или нет их в Base64, уточните у своей паранойи.
+
+
 
