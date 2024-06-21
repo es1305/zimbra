@@ -1,0 +1,41 @@
+[DEFAULT]
+
+bantime  = 360m
+findtime = 30m
+maxretry = 3
+
+ignoreip = 127.0.0.0/8 ZIMBRA_IP/32 YOUR_LOCAL_SUBNET ETC...
+
+[sshd]
+enabled  = true
+port     = ssh
+logpath  = %(sshd_log)s
+backend  = %(sshd_backend)s
+maxretry = 1
+
+[postfix]
+enabled = true
+mode    = aggressive
+port    = smtp,smtps,submission
+logpath = %(postfix_log)s
+backend = %(postfix_backend)s
+
+[postfix-sasl]
+enabled = true
+filter  = postfix[mode=auth]
+port    = smtp,smtps,submission,imap,imaps,pop3,pop3s
+logpath = %(postfix_log)s
+backend = %(postfix_backend)s
+
+[zimbra-web]
+enabled  = true
+port     = http,https
+logpath  = /opt/zimbra/log/mailbox.log
+
+[recidive]
+enabled   = true
+logpath   = /var/log/fail2ban.log
+banaction = %(banaction_allports)s
+bantime   = 1w
+findtime  = 1d
+maxretry  = 2
