@@ -1,5 +1,6 @@
 # Custom files
 .*
+!.env
 !.gitignore
 *.bak
 key.*
