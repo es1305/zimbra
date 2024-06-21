@@ -81,5 +81,7 @@ zmprov mcf +zimbraResponseHeader "Content-Security-Policy: default-src https: 's
 ```
 Имейте ввиду, директивы типа `unsafe-inline` снижают оценку на [Mozilla Observatory](https://observatory.mozilla.org), т.к. разрешают выполнение inline-скриптов. Кодировать или нет их в Base64, уточните у своей паранойи.
 
+### Ссылки
 
-
+* https://wiki.zimbra.com/wiki/Cipher_suites
+* https://wiki.zimbra.com/wiki/Secopstips
