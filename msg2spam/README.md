@@ -28,7 +28,7 @@ zmmtactl restart
 и создадим базу для Postfix:
 
 ```bash
-/opt/zimbra/common/sbin/postmap /opt/zimbra/conf/postfix_reject_sender
+su - zimbra -c '/opt/zimbra/common/sbin/postmap /opt/zimbra/conf/postfix_reject_sender'
 ```
 
 Теперь можно использовать скрипт.
