@@ -57,7 +57,7 @@ mkdir -p /opt/zimbra/ssl/letsencrypt \
 
 ### Настройка заголовков HTTP
 
-HSTS и запрет индексирования поисковыми ботами:
+[HSTS](https://ru.wikipedia.org/wiki/HSTS) и запрет индексирования поисковыми ботами:
 
 ```bash
 zmprov mcf +zimbraResponseHeader "Strict-Transport-Security: max-age=31536000; includeSubDomains"
@@ -67,14 +67,14 @@ zmprov mcf +zimbraResponseHeader "Referrer-Policy: no-referrer"
 zmprov mcf zimbraMailKeepOutWebCrawlers TRUE
 zmmailboxdctl restart
 ```
-Anti-CSRF tokens:
+[Anti-CSRF tokens](https://ru.wikipedia.org/wiki/Межсайтовая_подделка_запроса):
 
 ```bash
 zmlocalconfig -e zimbra_same_site_cookie="Strict"
 zmprov mcf +zimbraCsrfAllowedRefererHosts "mx.mydomain.tld"
 ```
 
-Content-Security-Policy (CSP):
+[Content-Security-Policy (CSP)](https://developer.mozilla.org/ru/docs/Web/HTTP/CSP):
 
 ```bash
 zmprov mcf +zimbraResponseHeader "Content-Security-Policy: default-src https: 'self' 'unsafe-inline'; script-src https: 'self' 'unsafe-inline' 'unsafe-eval'; object-src 'none'; img-src 'self' data:"
