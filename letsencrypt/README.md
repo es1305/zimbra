@@ -1,5 +1,7 @@
 # Installing a Letsencrypt certificate for Zimbra
 
+![SSL Labs](./ssllabs.png)
+
 ## TL;DR
 Используется [ACME Shell script](https://acme.sh) и метод подтверждения на сервере DNS [Cloudflare](https://cloudflare.com).
 
