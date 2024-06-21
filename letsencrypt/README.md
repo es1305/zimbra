@@ -28,7 +28,7 @@ curl https://get.acme.sh | sh -s email=postmaster@domain.tld
 
 ```bash
 export CF_Key="04c5##############################"
-export CF_Email="admin@domain.tld"
+export CF_Email="hostmaster@domain.tld"
 ```
 (для Global API key)
 
@@ -55,7 +55,7 @@ mkdir -p /opt/zimbra/ssl/letsencrypt \
 
 ## Усиление безопасности Zimbra
 
-## Настройка заголовков HTTP
+### Настройка заголовков HTTP
 
 HSTS и запрет индексирования поисковыми ботами:
 
@@ -81,7 +81,7 @@ zmprov mcf +zimbraResponseHeader "Content-Security-Policy: default-src https: 's
 ```
 Имейте ввиду, директивы типа `unsafe-inline` снижают оценку на [Mozilla Observatory](https://observatory.mozilla.org), т.к. разрешают выполнение inline-скриптов. Кодировать или нет их в Base64, уточните у своей паранойи.
 
-### Ссылки
+### Links
 
 * https://wiki.zimbra.com/wiki/Cipher_suites
 * https://wiki.zimbra.com/wiki/Secopstips
