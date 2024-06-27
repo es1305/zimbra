@@ -5,7 +5,7 @@
 
 ```bash
 zmprov mcf +zimbraMailTrustedIP 127.0.0.1
-zmprov mcf +zimbraMailTrustedIP ZIMBRA_OR_PROXY_IP
+zmprov mcf +zimbraMailTrustedIP ALL_ZIMBRA_OR_PROXY_IP
 ```
 
 ## Fail2ban
