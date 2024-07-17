@@ -32,7 +32,7 @@ backend  = %(sshd_backend)s
 maxretry = 1
 ```
 
-Встроенное правило для ssh. Я использую [tcpwrapper](https://www.securitylab.ru/glossary/tcp_wrapper_/) для ограничения доступа к ssh только для определённых адресов, поэтому блокировка происходит после 1-й попытки (`maxretry = 1`).
+Встроенное правило для ssh. Я использую [tcpwrapper](https://www.securitylab.ru/glossary/tcp_wrapper_/) для ограничения доступа к ssh только с определённых адресов, поэтому блокировка происходит после 1-й попытки (`maxretry = 1`).
 
 ```bash
 [postfix]
