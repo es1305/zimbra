@@ -25,6 +25,6 @@ if [[ -e $input ]]; then
   su - zimbra -c '/opt/zimbra/common/sbin/postmap /opt/zimbra/conf/postfix_reject_sender'
   :>$input
   echo "Finished!"
-else
+  else
   echo "File $input not found!"
 fi
