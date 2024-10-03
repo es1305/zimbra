@@ -4,6 +4,8 @@ bantime  = 360m
 findtime = 30m
 maxretry = 3
 
+bantime.increment = true
+
 ignoreip = 127.0.0.0/8 ZIMBRA_IP/32 YOUR_LOCAL_SUBNET ETC...
 
 [sshd]
