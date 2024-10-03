@@ -1,7 +1,7 @@
 # Настройки fail2ban для Zimbra
 
 ## Zimbra
-Для отображения в логах реальных IP (особенно если у вас прокси вынесен отдельно), рекомендуется выполнить
+Для отображения в логах реальных IP (особенно если у вас прокси вынесен отдельно), необходимо выполнить
 
 ```bash
 zmprov mcf +zimbraMailTrustedIP 127.0.0.1
@@ -9,6 +9,7 @@ zmprov mcf +zimbraMailTrustedIP 127.0.0.1
 ```bash
 zmprov mcf +zimbraMailTrustedIP <for all Zimbra/Proxy IP>
 ```
+т.е. для каждого IP сервера.
 
 ## Fail2ban
 Для локальных настроек используется файл `jail.local` или папка `jail.d`.
