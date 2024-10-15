@@ -84,4 +84,5 @@ dbpurgeage = 648000
 
 ### Links
 * https://github.com/fail2ban/fail2ban
+* https://wiki.zimbra.com/wiki/Log_Files#Logging_the_Originating_IP
 * https://blog.zimbra.com/2022/08/configuring-fail2ban-on-zimbra/
